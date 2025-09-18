@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student | Welfare Bus</title>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <link rel="stylesheet" href="css/app-blue.css?v=student-ui" />
+</head>
+
+<body>
+
+  <main class="container">
+    <!-- โลโก้ PSU + ชื่อมหาวิทยาลัย -->
+    <header class="brand" style="margin-left: 5px;">
+      <img src="img/psu-logo.png" alt="PSU Logo" class="psu-logo" />
+    </header>
+    <!-- แถบ University (เม็ดยาสีน้ำเงิน + ไอคอนรถ) -->
+    <div class="uni-chip">
+      <span class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor"
+            d="M3 13V7.5A2.5 2.5 0 0 1 5.5 5H14a3 3 0 0 1 2.83 2l1.17 3H20a2 2 0 0 1 2 2v3h-2v2h-2v-2H6v2H4v-2H2v-3a2 2 0 0 1 1-1.73Zm13.3-1.5L15.2 7.5A1.5 1.5 0 0 0 14 6.75H5.5a1 1 0 0 0-1 1V11h11.8ZM6.5 14.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm11 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
+        </svg>
+      </span>
+      <span class="uni-title">University Shuttle Tracking System</span>
+    </div>
+
+    <!-- ชื่อหน้า -->
+    <br>
+    <h2 class="page-title">Student</h2>
+
+    <!-- ฟอร์มล็อกอิน (คง ID เดิม) -->
+    <section id="auth-section" class="card">
+      <div class="form-grid">
+        <input type="email" id="student-email" placeholder="Enter your email" autocomplete="username" />
+        <input type="password" id="student-password" placeholder="Enter your password"
+          autocomplete="current-password" />
+        <div class="btn-row">
+          <button id="student-register" class="btn btn-soft" type="button">Register</button>
+          <button id="student-login" class="btn btn-primary" type="button">Login</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ส่วนแผนที่ + ETA (ให้ JS เปิดแสดงภายหลัง) -->
+    <section id="map-section" class="card hidden">
+      <h3 class="section-title">ติดตามรถ Welfare Bus</h3>
+
+      <div class="map-card">
+        <div id="map" class="map" aria-label="แผนที่นักศึกษา"></div>
+      </div>
+
+      <h3 class="eta-title">ETA รถสวัสดิการ</h3>
+      <ul id="eta" class="eta-list"></ul>
+
+      <button id="logout" class="btn btn-outline" type="button">ออกจากระบบ</button>
+    </section>
+  </main>
+
+  <!-- ตรรกะเดิมของคุณ -->
+  <script type="module" src="js/students/student.js"></script>
+</body>
+
+</html>

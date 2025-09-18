@@ -1,0 +1,40 @@
+// js/map-utils.js
+
+// Haversine Distance (Km)
+export function haversineDistance(lat1, lon1, lat2, lon2) {
+  const R = 6371;
+  const toRad = (x) => (x * Math.PI) / 180;
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+// ETA (minutes) สมมุติรถวิ่งเฉลี่ย 30 กม./ชม.
+export function calculateETA(distKm) {
+  const speedKmh = 30;
+  return Math.round((distKm / speedKmh) * 60);
+}
+
+// Animate Marker
+export function animateMarker(marker, oldPos, newPos) {
+  const steps = 30;
+  let count = 0;
+  const deltaLat = (newPos.lat - oldPos.lat) / steps;
+  const deltaLng = (newPos.lng - oldPos.lng) / steps;
+
+  function move() {
+    if (count < steps) {
+      oldPos.lat += deltaLat;
+      oldPos.lng += deltaLng;
+      marker.setLatLng([oldPos.lat, oldPos.lng]);
+      count++;
+      requestAnimationFrame(move);
+    } else {
+      marker.setLatLng([newPos.lat, newPos.lng]);
+    }
+  }
+  move();
+}

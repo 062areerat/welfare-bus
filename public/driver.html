@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Driver | Welfare Bus</title>
+
+  <!-- คง Leaflet ไว้เพื่อความเข้ากันได้กับ JS เดิม -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- ตรรกะเดิมของคุณ -->
+  <script type="module" src="js/drivers/driver.js"></script>
+  <!-- สีปุ่ม Start/Stop ตอนกด -->
+  <script src="js/ui-tracking-toggle.js" defer></script>
+
+
+  <link rel="stylesheet" href="css/app-blue.css?v=driver-ui-2">
+
+</head>
+
+<body>
+
+  <main class="container">
+    <!-- โลโก้ PSU + ชื่อมหาวิทยาลัย -->
+    <header class="brand" style="margin-left: 5px;">
+      <img src="img/psu-logo.png" alt="PSU Logo" class="psu-logo" />
+    </header>
+    <!-- แถบ University -->
+    <div class="uni-chip">
+      <span class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor"
+            d="M3 13V7.5A2.5 2.5 0 0 1 5.5 5H14a3 3 0 0 1 2.83 2l1.17 3H20a2 2 0 0 1 2 2v3h-2v2h-2v-2H6v2H4v-2H2v-3a2 2 0 0 1 1-1.73Zm13.3-1.5L15.2 7.5A1.5 1.5 0 0 0 14 6.75H5.5a1 1 0 0 0-1 1V11h11.8ZM6.5 14.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm11 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
+        </svg>
+      </span>
+      <span class="uni-title">University Shuttle Tracking System</span>
+    </div>
+
+    <br>
+
+    <h2 class="page-title">Driver</h2>
+
+    <!-- ฟอร์มล็อกอิน -->
+    <section id="auth-section" class="card">
+      <div class="form-grid">
+        <input type="email" id="driver-email" placeholder="Enter your email" autocomplete="username" />
+        <input type="password" id="driver-password" placeholder="Enter your password" autocomplete="current-password" />
+
+        <div class="btn-row">
+          <button id="driver-register" class="btn btn-soft" type="button">Register</button>
+          <button id="driver-login" class="btn btn-primary" type="button">Login</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- หน้าควบคุมการส่งพิกัด (ไม่มีแผนที่ให้ผู้ใช้เห็น) -->
+    <section id="tracking-section" class="card hidden">
+      <h3 class="section-title center">Start Tracking</h3>
+      <br>
+      <div class="stack-v">
+        <button id="start-tracking" class="btn btn-soft" type="button" aria-pressed="false">🚗 Share Location</button>
+        <button id="stop-tracking" class="btn btn-soft" type="button" aria-pressed="false">🛑 Stop Location</button>
+        <button id="logout" class="btn btn-outline" type="button">Log out</button>
+      </div>
+
+      <!-- คง element ไว้เพื่อให้ JS เดิมที่อ้าง #driver-map ไม่พัง แต่ซ่อนไว้ -->
+      <div class="hidden">
+        <div id="driver-map" class="map" aria-hidden="true"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ตรรกะเดิมของคุณ -->
+  <script type="module" src="js/drivers/driver.js"></script>
+  <!-- (ตัวเลือก) เปลี่ยนสีปุ่มเริ่ม/หยุด ตอนกด -->
+  <script src="js/ui-tracking-toggle.js" defer></script>
+</body>
+
+</html>

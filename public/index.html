@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welfare Bus Tracking</title>
+  <link rel="stylesheet" href="css/app-blue.css" />
+</head>
+
+<body>
+
+  <main class="container">
+    <!-- โลโก้ PSU + ชื่อมหาวิทยาลัย -->
+    <header class="brand" style="margin-left: 5px;">
+      <img src="img/psu-logo.png" alt="PSU Logo" class="psu-logo" />
+    </header>
+
+    <!-- แถบหัว University (มีไอคอนรถ) -->
+    <div class="uni-banner" aria-label="University Shuttle Tracking System">
+      <span class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor"
+            d="M3 13V7.5A2.5 2.5 0 0 1 5.5 5H14a3 3 0 0 1 2.83 2l1.17 3H20a2 2 0 0 1 2 2v3h-2v2h-2v-2H6v2H4v-2H2v-3a2 2 0 0 1 1-1.73Zm13.3-1.5L15.2 7.5A1.5 1.5 0 0 0 14 6.75H5.5a1 1 0 0 0-1 1V11h11.8ZM6.5 14.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm11 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
+        </svg>
+      </span>
+      <span class="uni-title">University Shuttle Tracking System</span>
+    </div>
+
+    <!-- ภาพมหาวิทยาลัย -->
+    <figure class="hero">
+      <img src="img/campus-hero.jpg" alt="ภาพมหาวิทยาลัย" />
+    </figure>
+
+    <!-- ข้อความต้อนรับ -->
+    <p class="welcome">ยินดีต้อนรับสู่</p>
+
+    <!-- แถบ Web Application (SVG ที่ตัดขอบแล้ว) -->
+    <img src="img/bnwebapp.svg" alt="Web Application" class="webapp-img" />
+
+    <!-- ปุ่มภาพติดตามรถ + ดรอปดาวน์บทบาท -->
+    <div class="cta-wrap">
+      <button class="cta-image-btn" id="openRoleMenu" type="button" aria-haspopup="menu" aria-controls="roleMenu"
+        aria-expanded="false" aria-label="ติดตามรถสวัสดิการในมหาวิทยาลัย">
+        <img src="img/bntrack.svg" alt="ติดตามรถสวัสดิการในมหาวิทยาลัย | University Shuttle Tracking System" />
+      </button>
+
+      <div class="role-menu" id="roleMenu" role="menu" aria-labelledby="openRoleMenu">
+        <a class="role-item driver" href="driver.html" role="menuitem" tabindex="-1">Driver</a>
+        <a class="role-item student" href="student.html" role="menuitem" tabindex="-1">Student</a>
+      </div>
+    </div>
+
+    <footer class="course">
+      รายวิชา 934-330 (Module : Smart device application)
+    </footer>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

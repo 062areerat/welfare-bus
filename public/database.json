@@ -1,0 +1,44 @@
+{
+"users": {
+"driver-uid-001": {
+"email": "driver1@example.com",
+"role": "driver",
+"createdAt": 1693516800000
+},
+"driver-uid-002": {
+"email": "driver2@example.com",
+"role": "driver",
+"createdAt": 1693516800000
+},
+"student-uid-001": {
+"email": "student1@example.com",
+"role": "student",
+"createdAt": 1693516800000
+},
+"student-uid-002": {
+"email": "student2@example.com",
+"role": "student",
+"createdAt": 1693516800000
+}
+},
+"vehicles": {
+"driver-uid-001": {
+"driverUid": "driver-uid-001",
+"lat": 0,
+"lng": 0,
+"timestamp": 1693516800000,
+"status": "offline",
+"plate": "กข-1234",
+"name": "driver1"
+},
+"driver-uid-002": {
+"driverUid": "driver-uid-002",
+"lat": 0,
+"lng": 0,
+"timestamp": 1693516800000,
+"status": "offline",
+"plate": "กข-5678",
+"name": "driver2"
+}
+}
+}
